@@ -13,8 +13,17 @@
     if (regexNum.test(shoeSize) == false) {
         alert('Pointure non valide')
     }
-    else if (regexNum.test(yearOfBirth) == false) {
+    else if (shoeSize > 60)
+    {
+        alert('Pointure trop grande')
+    }
+    else if (regexNum.test(yearOfBirth) == false)
+    {
         alert('Année de naissance non valide')
+    }
+    else if (yearOfBirth < 1900)
+    {
+        alert('Année de naissance trop lointaine')
     }
     else {
         alert(`La calculette a trouvé (après un calcul tordu) : ${result}`);
