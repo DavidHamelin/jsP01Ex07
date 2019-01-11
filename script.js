@@ -2,8 +2,12 @@
 {
     var shoeSize = document.getElementById('shoeSize').value;
     var yearOfBirth = document.getElementById('yearOfBirth').value;
-
-    var regexNum = /^[0-9.,]+$/i; /* n'accepte que les nombres */
+    // récupérer la Date d'aujourd'hui
+    var now = new Date();
+    var yearNow = now.getFullYear();
+    // RegExp
+    var regexNum = /^[0-9.,]+$/; /* n'accepte que les nombres */
+    /*  */
     if (regexNum.test(shoeSize) == false)
     {
         alert('Pointure non valide')
@@ -12,7 +16,7 @@
     {
         alert('Année de naissance non valide')
     }
-    else if (yearOfBirth < 1900)
+    else if ((yearOfBirth < 1900) || (yearOfBirth > yearNow))
     {
         alert('Année de naissance trop lointaine')
     }
